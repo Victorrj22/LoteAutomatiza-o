@@ -8,7 +8,7 @@ class Program
         using (var context = new ConsultaContext())
         {
             context.AdicionarTokenEConsulta();
-            context.AdicionarConsultaPorSQL("customer_bradesco_rh_jobs.lote_20231205");
+            context.AdicionarConsultaPorSQL();
         }
     }
 }

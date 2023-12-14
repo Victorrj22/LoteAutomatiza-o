@@ -1,31 +1,33 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 
 public class TokenAcesso
 {
-    [Column("cliente_id")]
-    public int ClienteId { get; set; }
-    
-    public string Token { get; set; }
-    public bool AcessoTotal { get; set; }
-    public DateTime IncluidoEm { get; set; }
-    public int IncluidoPor { get; set; }
-    public string Name { get; set; }
-    public int KeyType { get; set; }
     [Key]
-    public int TokenAcessoId { get; set; }
+    [Column("token_acesso_id")]
+    public int token_acesso_id { get; set; }
 }
 
 public class ConsultaContext : DbContext
 {
-    public DbSet<TokenAcesso> TokenAcesso { get; set; }
+     public DbSet<TokenAcesso> TokenAcesso { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer("Server=intelligencedb.directdigital.com.br;Database=directdigital_intelligence;User=direct_master;Password=uyjPjesR4YDFQrdlbPCg;");
+            string connectionString = "Host=localhost;Port=5430;Database=rocadeira;Username=postgres;Password=password";
+
+            optionsBuilder.UseNpgsql(connectionString);
+
+            // Desativar migrações automáticas
+            optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(CoreEventId.LazyLoadOnDisposedContextWarning));
         }
+
+        base.OnConfiguring(optionsBuilder);
     }
+    
 }
+
