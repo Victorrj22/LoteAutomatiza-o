@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConsoleBradesco")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc34fe44eb1a50cfe78fad8ca4ac6171c409f47f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5d7f913de17946c795cca731a45c6b6feaf3fb3")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConsoleBradesco")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConsoleBradesco")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

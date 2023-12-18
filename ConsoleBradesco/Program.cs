@@ -1,14 +1,9 @@
-﻿using System;
-using System.Linq;
-
-class Program
+﻿public class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        using (var context = new ConsultaContext())
-        {
-            context.AdicionarTokenEConsulta();
-            context.AdicionarConsultaPorSQL();
-        }
+        var query = new ConsultaContextExtensions();
+        await query.AdicionarTokenEConsulta();
+        await query.AdicionarConsultaPorSQL();
     }
 }

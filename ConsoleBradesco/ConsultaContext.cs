@@ -1,19 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-
-public class TokenAcesso
-{
-    [Key]
-    [Column("token_acesso_id")]
-    public int token_acesso_id { get; set; }
-}
-
 public class ConsultaContext : DbContext
 {
-     public DbSet<TokenAcesso> TokenAcesso { get; set; }
-
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         if (!optionsBuilder.IsConfigured)
